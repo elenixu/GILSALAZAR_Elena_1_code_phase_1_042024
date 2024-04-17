@@ -47,12 +47,16 @@ function Header() {
         )}
 
         {user && user.token && (
-          <Link onClick={signOut} className="main-nav-item" to="/">
-            <FontAwesomeIcon icon={faUserCircle}></FontAwesomeIcon>
-            {user.firstname + '  '}
-            <FontAwesomeIcon icon={faRightFromBracket}></FontAwesomeIcon>
-            Sign Out
-          </Link>
+          <>
+            <Link to="/user" className="main-nav-item">
+              <FontAwesomeIcon icon={faUserCircle} />
+              {user.firstname + '  '}
+            </Link>
+            <Link onClick={signOut} className="main-nav-item" to="/">
+              <FontAwesomeIcon icon={faRightFromBracket} />
+              Sign Out
+            </Link>
+          </>
         )}
       </div>
     </nav>
