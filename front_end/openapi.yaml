@@ -33,7 +33,14 @@ paths:
           description: Comment payload.
           required: true
           schema:
-            $ref: '#/definitions/Transaction'
+            type: object
+            properties:
+              note:
+                type: string
+                description: The updated note for the transaction.
+              category:
+                type: string
+                description: The updated category for the transaction.
       produces:
         - application/json
       responses:
